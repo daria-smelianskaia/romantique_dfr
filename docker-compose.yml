@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13
+    container_name: postgres-rom-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1111
+      POSTGRES_DB: rom.db
+    ports:
+      - "5430:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
